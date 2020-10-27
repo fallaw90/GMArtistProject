@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GMArtistProject</string>
+    <string name="artist_name">"Artist Name: "</string>
+    <string name="track_name">\"Track Name: \"</string>
+    <string name="release_date">\"Release Date: \"</string>
+    <string name="primary_genre_name">\"Primary Genre Name: \"</string>
+    <string name="track_price">\"Track Price: \"</string>
+</resources>
