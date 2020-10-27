@@ -1,6 +1,5 @@
 package com.fall.gmartistproject.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,9 @@ import com.fall.gmartistproject.R
 import com.fall.gmartistproject.models.Artist
 import com.fall.gmartistproject.models.ArtistData
 
+/**
+ * Adapter class
+ */
 class ArtistAdapter(private val artistData: ArtistData): RecyclerView.Adapter<ArtistAdapter.ArtistHolder>() {
 
     private val results = artistData.results

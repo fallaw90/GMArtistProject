@@ -4,6 +4,9 @@ import com.fall.gmartistproject.utils.Constants
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Build client using retrofit
+ */
 object ApiClient {
 
     fun getClient(): Retrofit? {

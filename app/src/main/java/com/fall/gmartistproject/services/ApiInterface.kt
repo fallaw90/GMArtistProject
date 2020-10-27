@@ -8,12 +8,10 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import retrofit2.http.Url
 
-
+/**
+ * Interface for API call
+ */
 interface ApiInterface {
-
     @GET
     fun getData(@Url url: String?): Call<ArtistData>?
-
-    /*@GET("search?term=")
-    fun getData(@Query("name") name: String?):  Call<ArtistData>?*/
 }

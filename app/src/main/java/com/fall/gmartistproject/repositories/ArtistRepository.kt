@@ -16,6 +16,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * This object is fetching data from API and return it as a LiveData Object
+ */
 object ArtistRepository {
 
     private const val TAG = "ArtistRepository"
@@ -23,11 +26,19 @@ object ArtistRepository {
     private val apiResponseLiveData: MutableLiveData<ApiResponse> = MutableLiveData<ApiResponse>()
     private var apiResponse: ApiResponse? = null
 
+    /**
+     * Return all artist data found as a live data object
+     * @param artistName
+     */
     fun getArtistData(artistName: String): LiveData<ApiResponse> {
         getData(artistName)
         return apiResponseLiveData
     }
 
+    /**
+     * Perform Api call and get data onSuccess or onFailure
+     * @param artistName
+     */
     private fun getData(artistName: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val apiInterface = getClient()?.create(ApiInterface::class.java)

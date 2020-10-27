@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         setClickListener()
     }
 
+    /**
+     * Set the search button click listener and call the function that trigger the API call
+     */
     private fun setClickListener() {
         btn_search.setOnClickListener {
             val artistName = et_artist_name.text.toString()
@@ -41,12 +44,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Trigger the API call and observe the return value
+     * @param artistName
+     */
     private fun observeArtistData(artistName: String) {
         progressDialog.show()
         artistViewModel.getArtistData(artistName).observe(this@MainActivity, Observer {
             progressDialog.dismiss()
             if (it.isSuccess) {
-                Toast.makeText(this@MainActivity, "API Call Success", Toast.LENGTH_LONG).show()
                 ArtistViewModel.artistData = it.artistData
                 startActivity(Intent(this@MainActivity, ListItemsActivity::class.java))
             } else {
@@ -57,6 +63,9 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    /**
+     * Initialize the loading indicator
+     */
     private fun initProgressDialog(){
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Loading")

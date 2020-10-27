@@ -1,8 +1,10 @@
 package com.fall.gmartistproject.models
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
+/**
+ * Artist info POJO class
+ */
 data class Artist(
     @SerializedName("wrapperType")
     val wrapperType: String,
@@ -70,4 +72,4 @@ data class Artist(
     val contentAdvisoryRating: String,
     @SerializedName("isStreamable")
     val isStreamable: Boolean
-) : Serializable
+)
